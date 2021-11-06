@@ -1,10 +1,21 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-    hi
-    </div>
+    <Switch>
+      <Route exact path="/">
+        This is home page
+      </Route>
+
+      <Route exact path="/starred">
+        This is starred
+      </Route>
+
+      <Route>
+        This is 404, Page Not Found!
+      </Route>
+    </Switch>
   );
 }
 
