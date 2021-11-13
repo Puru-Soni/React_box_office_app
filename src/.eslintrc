@@ -16,6 +16,8 @@
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "arrow-body-style": [0],
-      "prefer-arrow-callback": [0] 
+      "prefer-arrow-callback": [0], 
+      // eslint-disable-next-line no-console
+      "no-console": [0] 
     }
   }
