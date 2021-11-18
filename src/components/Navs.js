@@ -9,7 +9,7 @@ const LINKS = [
 
 const Navs = () => {
     return (
-        <div>   
+        <nav>   
             <ul>
                 {
                     LINKS.map(item => ( 
@@ -19,7 +19,7 @@ const Navs = () => {
                     ))
                 }
             </ul>
-        </div>
+        </nav>
     )
 }
 
