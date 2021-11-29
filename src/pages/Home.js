@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import ActorGird from '../components/actor/ActorGird';
 import MainPageLayout from '../components/MainPageLayout';
-import {apiGet} from '../misc/config'
+import ShowGrid from '../components/show/ShowGrid';
+import {apiGet} from '../misc/config';
 
 const Home = () => {
     const [input, setInput] = useState('');
@@ -31,10 +33,10 @@ const Home = () => {
 
     const renderResult = ()=>{
         if( results && results.length === 0 ) return <div>No result</div>;
-
-        if( results && results.length > 0 ) return results[0].show ? results.map( item=> <div key={item.show.id}>{item.show.name}</div> ) 
-        : results.map( item=> <div key={item.person.id}>{item.person.name}</div> );
-        
+        if( results && results.length > 0 ) 
+        return results[0].show 
+        ? <ShowGrid data={results} /> 
+        : <ActorGird data={results} />
         return null; 
     }
 
