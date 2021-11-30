@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import ActorGird from '../components/actor/ActorGird';
+import CustomRadio from '../components/CustomRadio';
 import MainPageLayout from '../components/MainPageLayout';
 import ShowGrid from '../components/show/ShowGrid';
 import {apiGet} from '../misc/config';
 import { useLastQuery } from '../misc/custom-hooks';
+import { RadioInputsWrapper, SearchButtonWrapper, SearchInput } from './Home.styled';
 
 const Home = () => {
     const [input, setInput] = useLastQuery();
@@ -43,19 +45,28 @@ const Home = () => {
 
     return (
         <MainPageLayout>
-            <input placeholder="Search for something" type="text" onChange={onInputChange} onKeyDown={onKeyDown} value={input} />
+            <SearchInput placeholder="Search for something" type="text" onChange={onInputChange} onKeyDown={onKeyDown} value={input} />
+            <RadioInputsWrapper>
             <div>
-                <label htmlFor="shows-search">
-                    TV Shows
-                    <input name="radio-search"  id="shows-search" type="radio" value="shows" onChange={onRadioChange} />
-                </label>
-
-                <label htmlFor="actor-search">
-                    Actors
-                    <input name="radio-search" id="actor-search" type="radio" value="people" onChange={onRadioChange} />
-                </label>
+                <CustomRadio 
+                    label="Shows"
+                    id="shows-search"
+                    value="shows"
+                    onChange={onRadioChange}
+                />
+            </div>    
+            <div>
+                <CustomRadio 
+                    label="Actors"
+                    id="actor-search"
+                    value="people"
+                    onChange={onRadioChange}
+                />
             </div>
-            <button type="button" onClick={onSearch}>Search</button>
+            </RadioInputsWrapper>
+            <SearchButtonWrapper>
+                <button type="button" onClick={onSearch}>Search</button>
+            </SearchButtonWrapper>
             {renderResult()}
         </MainPageLayout>
     )
