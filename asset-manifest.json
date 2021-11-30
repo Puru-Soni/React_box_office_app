@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/React_box_office_app/static/css/main.5fffadb5.chunk.css",
-    "main.js": "/React_box_office_app/static/js/main.2e792f12.chunk.js",
-    "main.js.map": "/React_box_office_app/static/js/main.2e792f12.chunk.js.map",
+    "main.js": "/React_box_office_app/static/js/main.dc4e76af.chunk.js",
+    "main.js.map": "/React_box_office_app/static/js/main.dc4e76af.chunk.js.map",
     "runtime-main.js": "/React_box_office_app/static/js/runtime-main.6e9d46a1.js",
     "runtime-main.js.map": "/React_box_office_app/static/js/runtime-main.6e9d46a1.js.map",
-    "static/js/2.a99de5a3.chunk.js": "/React_box_office_app/static/js/2.a99de5a3.chunk.js",
-    "static/js/2.a99de5a3.chunk.js.map": "/React_box_office_app/static/js/2.a99de5a3.chunk.js.map",
+    "static/js/2.df56fb43.chunk.js": "/React_box_office_app/static/js/2.df56fb43.chunk.js",
+    "static/js/2.df56fb43.chunk.js.map": "/React_box_office_app/static/js/2.df56fb43.chunk.js.map",
     "static/js/3.1dcd3431.chunk.js": "/React_box_office_app/static/js/3.1dcd3431.chunk.js",
     "static/js/3.1dcd3431.chunk.js.map": "/React_box_office_app/static/js/3.1dcd3431.chunk.js.map",
     "index.html": "/React_box_office_app/index.html",
     "static/css/main.5fffadb5.chunk.css.map": "/React_box_office_app/static/css/main.5fffadb5.chunk.css.map",
-    "static/js/2.a99de5a3.chunk.js.LICENSE.txt": "/React_box_office_app/static/js/2.a99de5a3.chunk.js.LICENSE.txt"
+    "static/js/2.df56fb43.chunk.js.LICENSE.txt": "/React_box_office_app/static/js/2.df56fb43.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6e9d46a1.js",
-    "static/js/2.a99de5a3.chunk.js",
+    "static/js/2.df56fb43.chunk.js",
     "static/css/main.5fffadb5.chunk.css",
-    "static/js/main.2e792f12.chunk.js"
+    "static/js/main.dc4e76af.chunk.js"
   ]
 }
