@@ -7,6 +7,7 @@ import Details from '../components/show/Details';
 import Seasons from '../components/show/Seasons';
 import ShowMainData from '../components/show/ShowMainData';
 import { apiGet } from '../misc/config'
+import { InfoBlock, ShowPageWrapper } from './Show.Styled';
 
 
 const reducer = (prevState, action)=>{
@@ -34,6 +35,7 @@ const Show = () => {
     const { id } = useParams();
     const[{show, isLoading, error}, dispatch] = useReducer(reducer, initialState);
       
+
     useEffect( ()=>{
 
         let isMounted = true;
@@ -62,28 +64,30 @@ const Show = () => {
     }
 
     return (
-        <div>
+        <ShowPageWrapper>
             <ShowMainData image = {show.image} 
             name={show.name} 
             rating={show.rating} 
             summary={show.summary} 
             tags={show.genres} />
 
-            <div>
+            <InfoBlock>
                 <h1>Details</h1>
                 <Details status={show.status}
                 network={show.network}
                 premiered={show.premiered}/>
-            </div>
-            <div>
+            </InfoBlock>
+            
+            <InfoBlock>
                 <h1>Seasons</h1>
                 <Seasons seasons={show._embedded.seasons}/>
-            </div>
-            <div>
+            </InfoBlock>
+
+            <InfoBlock>
                 <h1>Cast</h1>
                 <Cast cast={show._embedded.cast}/>
-            </div>
-        </div>
+            </InfoBlock>
+        </ShowPageWrapper>
     )
 }
 
