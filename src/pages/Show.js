@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';  
 import { useParams } from 'react-router-dom';
+import Loader from "react-loader-spinner";
 import Cast from '../components/show/Cast';
 import Details from '../components/show/Details';
 import Seasons from '../components/show/Seasons';
@@ -17,7 +18,13 @@ const Show = () => {
     const { show, isLoading , error } = useShow(id);
 
     if(isLoading){
-        return <div>Data is being loaded</div>
+        return <Loader
+        type="Puff"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={3000}
+      />
     }
     if(error){
         return <div>Error ocurred: {error}</div>
