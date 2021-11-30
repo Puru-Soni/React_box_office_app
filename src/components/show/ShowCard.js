@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React from 'react';
+import React, {memo} from 'react';
 import {Link} from 'react-router-dom'
 import { Star } from '../styled';
 // import { SearchCard } from '../styled';
@@ -26,4 +26,4 @@ const ShowCard = ({ id, name, image, summary, onStarClick, isStarred }) => {
     );
 };
 
-export default ShowCard
+export default memo(ShowCard);

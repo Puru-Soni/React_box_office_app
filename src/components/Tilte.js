@@ -1,8 +1,8 @@
-import React from 'react'
+/* eslint-disable no-unused-vars */
+import React, { memo } from 'react'
 import { TitleWrapper } from './Title.Styled'
 
-
-export default function Tilte({ title, subtitle }){
+const Title = ({ title, subtitle })=>{
     return (
         <TitleWrapper>
             <h1>{ title }</h1>
@@ -10,3 +10,6 @@ export default function Tilte({ title, subtitle }){
         </TitleWrapper>
     )
 }
+
+
+export default memo(Title);

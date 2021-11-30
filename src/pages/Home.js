@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import ActorGird from '../components/actor/ActorGird';
 import CustomRadio from '../components/CustomRadio';
 import MainPageLayout from '../components/MainPageLayout';
@@ -7,6 +7,15 @@ import ShowGrid from '../components/show/ShowGrid';
 import {apiGet} from '../misc/config';
 import { useLastQuery } from '../misc/custom-hooks';
 import { RadioInputsWrapper, SearchButtonWrapper, SearchInput } from './Home.styled';
+
+const renderResult = (results)=>{
+    if( results && results.length === 0 ) return <div>No result</div>;
+    if( results && results.length > 0 ) 
+    return results[0].show 
+    ? <ShowGrid data={results} /> 
+    : <ActorGird data={results} />
+    return null; 
+}
 
 const Home = () => {
     const [input, setInput] = useLastQuery();
@@ -20,9 +29,9 @@ const Home = () => {
         })
     }
 
-    const onRadioChange = (ev)=>{
+    const onRadioChange = useCallback( (ev)=>{
         setSearchFor( ev.target.value );
-    }
+    }, [] ); 
 
     const onKeyDown = (ev)=>{
         if(ev.keyCode === 13){
@@ -30,18 +39,9 @@ const Home = () => {
         }
     }
 
-    const onInputChange = (ev)=>{
+    const onInputChange = useCallback(  (ev)=>{
         setInput(ev.target.value);
-    }
-
-    const renderResult = ()=>{
-        if( results && results.length === 0 ) return <div>No result</div>;
-        if( results && results.length > 0 ) 
-        return results[0].show 
-        ? <ShowGrid data={results} /> 
-        : <ActorGird data={results} />
-        return null; 
-    }
+    }, [setInput] )
 
     return (
         <MainPageLayout>
@@ -67,7 +67,7 @@ const Home = () => {
             <SearchButtonWrapper>
                 <button type="button" onClick={onSearch}>Search</button>
             </SearchButtonWrapper>
-            {renderResult()}
+            {renderResult(results)}
         </MainPageLayout>
     )
 }
